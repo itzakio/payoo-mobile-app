@@ -10,13 +10,13 @@
     <link rel="shortcut icon" href="./payoo.png" type="image/x-icon">
     <title>Payoo Home</title>
 </head>
-<body class="h-dvh bg-[#f4f5f7]">
+<body class="h-vh bg-[#f4f5f7] pb-5">
     <!-- Nav section start -->
     <div class="max-w-sm w-full mx-auto px-6  flex justify-between items-center bg-white border-b-1 border-gray-300">
         <div class="flex items-center py-3">
             <img class="w-12" src="./assets/Group.png" alt="">
             <div>
-                <h2 class="text-lg font-extrabold">$<span>45000</span></h2>
+                <h2 class="text-lg font-extrabold">$ <span id="available-balance">45000</span></h2>
                 <p class="text-sm text-gray-400">Available Balance</p>
             </div>
         </div>
@@ -63,29 +63,33 @@
     <!-- Features section end -->
 
     <!-- Add Money form section start -->
-    <section class="max-w-sm w-full mx-auto border-2 border-pink-500">
-        <h2 class="text-lg font-semibold">Add Money</h2>
-        <form action="" class="max-w-sm w-full p-8 flex flex-col gap-4 bg-white rounded-3xl">
-        <label for="mob-number" class="font-medium">Mobile Number</label>
-         <input class="bg-[#f4f5f7] border-none py-3 pl-5 rounded-full" type="text" id="mob-number" placeholder="Enter your number">
-         <select class="select bg-[#f4f5f7] border-none pl-5 rounded-full">
-            <option disabled selected>Pick a color</option>
-            <option>Crimson</option>
-            <option>Amber</option>
-            <option>Velvet</option>
+    <section class="max-w-sm w-full mx-auto mt-8">
+        <h2 class="text-lg font-semibold ">Add Money</h2>
+
+        <form action="" class="max-w-sm w-full p-8 mt-4 flex flex-col gap-4 bg-white rounded-3xl">
+        <label for="bank" class="font-medium text-gray-600">Select A Bank</label>
+         <select id="bank" class="select bg-[#f4f5f7] border-none h-11 py-3 px-5 rounded-full font-semibold">
+            <option disabled selected>Select Bank</option>
+            <option>Sonali Bank</option>
+            <option>Islami Bank</option>
+            <option>Brak Bank</option>
         </select>
 
-        <select name="" id="" class="bg-[#f4f5f7] border-none pl-5 rounded-full">
-            <option value="red">red</option>
-            <option value="red">red</option>
-            <option value="red">red</option>
-            <option value="red">red</option>
-        </select>
+         <label for="account-number" class="font-medium text-gray-600">Bank Account Number</label>
+         <input class="bg-[#f4f5f7] border-none h-11 pl-5 rounded-full" type="text" id="account-number" placeholder="Enter 11 digit account number">
 
+         <label for="add-amount" class="font-medium text-gray-600">Amount to Add</label>
+         <input class="bg-[#f4f5f7] border-none h-11 pl-5 rounded-full" type="text" id="add-amount" placeholder="Add Amount to withdraw">
+
+        
+         <label for="add-pin" class="font-medium text-gray-600">Pin Number</label>
+         <input class="bg-[#f4f5f7] border-none h-11 pl-5 rounded-full" type="password" id="add-pin" placeholder="Enter 4 digit pin number">
+
+         <button class="w-full text-xl font-semibold text-white bg-blue-600 hover:bg-blue-700 duration-150 rounded-full h-11 cursor-pointer" id="btn-add-money">Add Money</button>
         </form>
     </section>
     <!-- Add Money form section end -->
-   
-    
+  
+    <script src="./home.js"></script>
 </body>
 </html>
