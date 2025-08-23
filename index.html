@@ -3,10 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="./css/style.css">
     <link rel="shortcut icon" href="./payoo.png" type="image/x-icon">
     <title>Payoo</title>
 </head>
-<body>
-    
-</body>
+<body class="h-dvh bg-[#f4f5f7] flex flex-col justify-center items-center outfit-font ">
+    <div class="relative max-w-[20rem] w-full bg-[url(./assets/bg.png)] bg-no-repeat bg-cover">
+        <img class="mx-auto py-7 " src="./assets/Group.png" alt="company logo">
+    </div>  
+        <form action="" class="max-w-sm w-full p-8 flex flex-col gap-4 bg-white rounded-3xl">
+        
+         <label for="mob-number" class="font-medium">Mobile Number</label>
+         <input class="bg-[#f4f5f7] border-none py-3 pl-5 rounded-full" type="text" id="mob-number" placeholder="Enter your number">
+
+         <label for="password" class="font-medium">4 Digit Pin</label>
+         <input class="bg-[#f4f5f7] border-none py-3 pl-5 rounded-full" type="password" id="password" placeholder="Enter 4 Digit Pin">
+
+         <button class="w-full text-xl font-semibold text-white bg-blue-600 hover:bg-blue-700 duration-150 rounded-full py-3 cursor-pointer" id="btn-login">Login</button>
+        </form>
+        
+        <script src="./script.js"></script>
+    </body>
 </html>
