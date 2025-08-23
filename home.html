@@ -68,7 +68,7 @@
 
         <form action="" class="max-w-sm w-full p-8 mt-4 flex flex-col gap-4 bg-white rounded-3xl">
         <label for="bank" class="font-medium text-gray-600">Select A Bank</label>
-         <select id="bank" class="select bg-[#f4f5f7] border-none h-11 py-3 px-5 rounded-full font-semibold">
+         <select required id="bank" class="select bg-[#f4f5f7] border-none h-11 py-3 px-5 rounded-full font-semibold">
             <option disabled selected>Select Bank</option>
             <option>Sonali Bank</option>
             <option>Islami Bank</option>
@@ -76,14 +76,14 @@
         </select>
 
          <label for="account-number" class="font-medium text-gray-600">Bank Account Number</label>
-         <input class="bg-[#f4f5f7] border-none h-11 pl-5 rounded-full" type="text" id="account-number" placeholder="Enter 11 digit account number">
+         <input required class="bg-[#f4f5f7] border-none h-11 pl-5 rounded-full" type="text" id="account-number" placeholder="Enter 11 digit account number">
 
          <label for="add-amount" class="font-medium text-gray-600">Amount to Add</label>
-         <input class="bg-[#f4f5f7] border-none h-11 pl-5 rounded-full" type="text" id="add-amount" placeholder="Add Amount to withdraw">
+         <input required class="bg-[#f4f5f7] border-none h-11 pl-5 rounded-full" type="text" id="add-amount" placeholder="Add Amount to withdraw">
 
         
          <label for="add-pin" class="font-medium text-gray-600">Pin Number</label>
-         <input class="bg-[#f4f5f7] border-none h-11 pl-5 rounded-full" type="password" id="add-pin" placeholder="Enter 4 digit pin number">
+         <input required class="bg-[#f4f5f7] border-none h-11 pl-5 rounded-full" type="password" id="add-pin" placeholder="Enter 4 digit pin number">
 
          <button class="w-full text-xl font-semibold text-white bg-blue-600 hover:bg-blue-700 duration-150 rounded-full h-11 cursor-pointer" id="btn-add-money">Add Money</button>
         </form>
