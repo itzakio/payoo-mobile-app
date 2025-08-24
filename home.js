@@ -34,6 +34,7 @@ document.getElementById('add-money-submit').addEventListener('click', function(e
     const accountNumber = getInnerValue('account-number');
     const addAmountStr = getInnerValue('add-amount')
     const addAmount = parseInt(addAmountStr);
+    console.log(typeof addAmount);
     const pinNumber = getInnerValue('add-pin');
     const availableBalance = getInnerTextNum('available-balance');
 
@@ -51,7 +52,7 @@ document.getElementById('add-money-submit').addEventListener('click', function(e
         alert('Please provide add amount');
         return;
     }
-    else if (addAmount <= 0 || addAmount !== 'number'){
+    else if (addAmount <= 0 || typeof addAmount !== 'number'){
         alert('Invalid amount');
         return;
     }
@@ -95,7 +96,7 @@ document.getElementById('cash-out-submit')
         alert('Please provide a valid agent number');
         return;
     }
-    else if (withdrawAmount <= 0 || withdrawStr === '' || withdrawAmount !== 'number'){
+    else if (withdrawAmount <= 0 || withdrawStr === '' || typeof withdrawAmount !== 'number'){
         alert('Please enter the withdraw amount');
         return;
     }
