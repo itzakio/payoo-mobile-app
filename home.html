@@ -34,28 +34,28 @@
       <!-- Banner section end -->
 
     <!-- Features section start -->
-    <section class="max-w-sm w-full mx-auto px-6 py-8 rounded-b-2xl bg-white grid grid-cols-3 justify-between gap-4  ">
-        <div id="btn-add-money" class="w-26 h-20 flex flex-col justify-center items-center gap-2 mx-auto border-2 rounded-lg border-gray-300 cursor-pointer">
+    <section id="features" class="max-w-sm w-full mx-auto px-6 py-8 rounded-b-2xl bg-white grid grid-cols-3 justify-between gap-4  ">
+        <div id="btn-add-money" class="features-btn w-26 h-20 flex flex-col justify-center items-center gap-2 mx-auto border-2 rounded-lg border-gray-300 cursor-pointer">
             <img src="./assets/addmoney.png" alt="">
             <p class="text-gray-600 text-sm">Add Money</p>
         </div>
-        <div id="btn-cash-out" class="w-26 h-20 flex flex-col justify-center items-center gap-2 mx-auto border-2 rounded-lg border-gray-300 cursor-pointer">
+        <div id="btn-cash-out" class="features-btn w-26 h-20 flex flex-col justify-center items-center gap-2 mx-auto border-2 rounded-lg border-gray-300 cursor-pointer">
             <img src="./assets/cashout.png" alt="">
             <p class="text-gray-600 text-sm">Cashout</p>
         </div>
-        <div class="w-26 h-20 flex flex-col justify-center items-center gap-2 mx-auto border-2 rounded-lg border-gray-300 cursor-pointer">
+        <div id="btn-transfer-money" class="features-btn w-26 h-20 flex flex-col justify-center items-center gap-2 mx-auto border-2 rounded-lg border-gray-300 cursor-pointer">
             <img src="./assets/transfer.png" alt="">
             <p class="text-gray-600 text-sm">Transfer Money</p>
         </div>
-        <div class="w-26 h-20 flex flex-col justify-center items-center gap-2 mx-auto border-2 rounded-lg border-gray-300 cursor-pointer">
+        <div id="btn-get-bonus" class="features-btn w-26 h-20 flex flex-col justify-center items-center gap-2 mx-auto border-2 rounded-lg border-gray-300 cursor-pointer">
             <img src="./assets/getbonus.png" alt="">
             <p class="text-gray-600 text-sm">Get Bonus</p>
         </div>
-        <div class="w-26 h-20 flex flex-col justify-center items-center gap-2 mx-auto border-2 rounded-lg border-gray-300 cursor-pointer">
+        <div id="btn-pay-bill" class="features-btn w-26 h-20 flex flex-col justify-center items-center gap-2 mx-auto border-2 rounded-lg border-gray-300 cursor-pointer">
             <img src="./assets/paybill.png" alt="">
             <p class="text-gray-600 text-sm">Pay Bill</p>
         </div>
-        <div class="w-26 h-20 flex flex-col justify-center items-center gap-2 mx-auto border-2 rounded-lg border-gray-300 cursor-pointer">
+        <div id="btn-transaction" class="features-btn w-26 h-20 flex flex-col justify-center items-center gap-2 mx-auto border-2 rounded-lg border-gray-300 cursor-pointer">
             <img src="./assets/transaction.png" alt="">
             <p class="text-gray-600 text-sm">Transactions</p>
         </div>
@@ -63,10 +63,10 @@
     <!-- Features section end -->
 
     <!--All form section start -->
-
+    <section id="all-section">
 
     <!-- Add Money form section start -->
-    <section id="add-money-section" class="hidden max-w-sm mx-auto mt-8">
+    <section id="add-money-section" class="features hidden max-w-sm mx-auto mt-8">
         <h2 class="text-lg font-semibold ">Add Money</h2>
 
         <form action="" class=" max-w-sm w-full p-8 mt-4 flex flex-col gap-4 bg-white rounded-3xl">
@@ -94,7 +94,7 @@
     <!-- Add Money form section end -->
 
     <!-- Cash out section start -->
-        <section id="cash-out-section" class="hidden max-w-sm mx-auto mt-8">
+    <section id="cash-out-section" class="features hidden max-w-sm mx-auto mt-8">
         <h2 class="text-lg font-semibold ">Cash Out</h2>
 
         <form action="" class=" max-w-sm w-full p-8 mt-4 flex flex-col gap-4 bg-white rounded-3xl">
@@ -115,8 +115,42 @@
     </section>
     <!-- Cash out section end -->
 
+    <!-- Transfer money section start -->
+    <section id="transfer-money-section" class="features hidden max-w-sm mx-auto mt-8">
+        <h2 class="text-lg font-semibold ">Transfer Money</h2>
+    </section>
+    <!-- Transfer money section end -->
 
+    <!-- Get bonus section start -->
+    <section id="get-bonus-section" class="features hidden max-w-sm mx-auto mt-8">
+        <h2 class="text-lg font-semibold ">Get Bonus</h2>
+    </section>
+    <!-- Get bonus money section end -->
+
+    <!-- Pay Bill section start -->
+    <section id="pay-bill-section" class="features hidden max-w-sm mx-auto mt-8">
+        <h2 class="text-lg font-semibold ">Pay Bill</h2>
+    </section>
+    <!-- Pay Bill section end -->
+
+    <!-- Transactions section start -->
+    <section id="transaction-section" class="features hidden max-w-sm mx-auto mt-8">
+        <div class="flex justify-between items-center">
+            <h2 class="text-lg font-semibold ml-6">Transaction History</h2>
+            <p class="text-sm text-gray-500 mr-6">View All</p>
+        </div>
+        <div id="transaction-container">
+
+        </div>
+        
+    </section>
+    <!-- Transactions section end -->
+
+
+    </section>
     <!-- All form section end -->
+
+    
   
     <script src="./home.js"></script>
 </body>
