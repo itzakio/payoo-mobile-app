@@ -72,11 +72,14 @@ document.getElementById('add-money-submit').addEventListener('click', function(e
 
     const data = {
         name:'Add Money',
-        date: new Date().toLocaleTimeString()
+        date: new Date().toLocaleTimeString(),
+        src:"./assets/addmoney.png ",
+        changes: '+',
+        amount: addAmount
     }
 
     transactionData.push(data);
-    console.log(transactionData);
+    
 
 })
 
@@ -88,7 +91,7 @@ document.getElementById('cash-out-submit')
     const agentNumber = getInnerValue('agent-number');
     const withdrawStr = getInnerValue('withdraw-amount');
     const withdrawAmount = parseInt(withdrawStr); 
-    const withdrawPin = getInnerValue('cash-out-pin');;
+    const withdrawPin = getInnerValue('cash-out-pin');
 
     const myWithdrawPin = '2001';
 
@@ -115,11 +118,65 @@ document.getElementById('cash-out-submit')
 
      const data = {
         name:'Cash out',
-        date: new Date().toLocaleTimeString()
+        date: new Date().toLocaleTimeString(),
+        src:"./assets/cashout.png ",
+        changes: '-',
+        amount: withdrawAmount
     }
 
     transactionData.push(data);
-    console.log(transactionData);
+    
+
+})
+
+// Transfer Money features
+document.getElementById('transfer-money-submit')
+.addEventListener('click', function(e){
+    e.preventDefault();
+    const availableBalance = getInnerTextNum ('available-balance');
+    const userAccNum = getInnerValue('user-acc-number');
+    const transferStr = getInnerValue('transfer-amount');
+    const transferAmount = parseInt(transferStr); 
+    const transferPin = getInnerValue('transfer-pin');
+
+    const myTransferPin = '2001';
+    const myUserAccNumber = '15687774710';
+
+    if (userAccNum === ''){
+        alert('Please provide account number');
+        return;
+    }
+    else if(userAccNum !== myUserAccNumber){
+        alert('No user exist in this account number');
+        return;
+    }
+    else if (transferAmount <= 0 || transferStr === '' || typeof transferAmount !== 'number'){
+        alert('Please enter the withdraw amount');
+        return;
+    }
+    else if (transferPin !== myTransferPin){
+        alert('Pin number is invalid');
+        return;
+    }
+    else if (availableBalance < transferAmount){
+        alert('Insufficient Balance');
+        return;
+    }
+    const newBalance = availableBalance - transferAmount;
+    setInnerText(newBalance);
+    setInnerValue('transfer-amount','');
+    setInnerValue('transfer-pin','');
+
+     const data = {
+        name:'Transfer Money',
+        date: new Date().toLocaleTimeString(),
+        src:"./assets/transfer.png ",
+        changes: '-',
+        amount: transferAmount
+    }
+
+    transactionData.push(data);
+    
 
 })
 
@@ -134,19 +191,29 @@ document.getElementById('btn-transaction')
         <div class="max-w-sm w-full mx-auto p-2  mt-2 bg-white rounded-xl flex justify-between items-center">
         <div class="flex items-center">
             <div class="size-12 bg-[#f4f5f7] rounded-full flex justify-center items-center ">
-            <img src="./assets/addmoney.png" alt="">
+            <img src="${data.src}" alt="">
         </div>
         <div class="ml-3">
             <h2>${data.name}</h2>
             <p>${data.date}</p>
         </div>
         </div>
+        <div class = "flex items-center gap-2">
+        <p class = "text-lg font-semibold ">${data.changes} ${data.amount} TK</p>
         <i class="fa-solid fa-ellipsis-vertical"></i>
+        </div>
     </div>
         `
     transactionContainer.appendChild(div);
     }
     
+})
+
+document.getElementById('btn-latest-payment')
+.addEventListener('click', function(){
+    const data = document.getElementById('transaction-container').innerHTML
+    const latestPaymentContainer = document.getElementById('latest-payment-container');
+    latestPaymentContainer.innerHTML = data;
 })
 
 
@@ -213,6 +280,7 @@ elementBlock('btn-transfer-money', 'transfer-money-section');
 elementBlock('btn-get-bonus', 'get-bonus-section');
 elementBlock('btn-pay-bill', 'pay-bill-section');
 elementBlock('btn-transaction', 'transaction-section');
+elementBlock('btn-latest-payment', 'latest-payment-section');
 
 
 

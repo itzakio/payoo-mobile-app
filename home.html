@@ -27,7 +27,7 @@
     <!-- Nav section end -->
 
      <!-- Banner section start -->
-    <section class="max-w-sm w-full mx-auto px-6 pt-8 bg-white">
+    <section id="btn-latest-payment" class="max-w-sm w-full mx-auto px-6 pt-8 bg-white">
         <h1 class="text-2xl font-bold">Welcome to Payooo!🔥</h1>
         <p class="text-gray-400">Enjoy easy and convenient financial services with us. Cashout charge is low and </p>
     </section>
@@ -118,6 +118,22 @@
     <!-- Transfer money section start -->
     <section id="transfer-money-section" class="features hidden max-w-sm mx-auto mt-8">
         <h2 class="text-lg font-semibold ">Transfer Money</h2>
+
+        <form action="" class=" max-w-sm w-full p-8 mt-4 flex flex-col gap-4 bg-white rounded-3xl">
+        
+
+         <label for="user-acc-number" class="font-medium text-gray-600">User Account Number</label>
+         <input  class="bg-[#f4f5f7] border-none h-11 pl-5 rounded-full" type="text" id="user-acc-number" placeholder="Enter 11 digit number">
+
+         <label for="transfer-amount" class="font-medium text-gray-600">Amount</label>
+         <input  class="bg-[#f4f5f7] border-none h-11 pl-5 rounded-full" type="text" id="transfer-amount" placeholder="Enter Amount to withdraw">
+
+        
+         <label for="transfer-pin" class="font-medium text-gray-600">Pin Number</label>
+         <input  class="bg-[#f4f5f7] border-none h-11 pl-5 rounded-full" type="password" id="transfer-pin" placeholder="Enter 4 digit pin number">
+
+         <button  id="transfer-money-submit" class="w-full text-xl font-semibold text-white bg-blue-600 hover:bg-blue-700 duration-150 rounded-full h-11 cursor-pointer" >Send Now</button>
+        </form>
     </section>
     <!-- Transfer money section end -->
 
@@ -139,12 +155,25 @@
             <h2 class="text-lg font-semibold ml-6">Transaction History</h2>
             <p class="text-sm text-gray-500 mr-6">View All</p>
         </div>
-        <div id="transaction-container">
-
+        <div id="transaction-container" class="max-h-[25rem] overflow-auto">
+            <!-- html input from js -->
         </div>
         
     </section>
     <!-- Transactions section end -->
+
+    <!-- Latest Payment section start -->
+    <section id="latest-payment-section" class="features max-w-sm mx-auto mt-8">
+        <div class="flex justify-between items-center">
+            <h2 class="text-lg font-semibold ml-6">Latest Payment</h2>
+            <p class="text-sm text-gray-500 mr-6">View All</p>
+        </div>
+        <div class="flex flex-col-reverse max-h-[25rem] overflow-auto" id="latest-payment-container">
+
+        </div>
+        
+    </section>
+    <!-- Latest Payment section end -->
 
 
     </section>
