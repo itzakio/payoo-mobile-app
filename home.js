@@ -91,17 +91,20 @@ document
     if (agentNumber.length != 11) {
       alert("Please provide a valid agent number");
       return;
-    } else if (
+    } 
+    else if (
       withdrawAmount <= 0 ||
       withdrawStr === "" ||
       typeof withdrawAmount !== "number"
     ) {
       alert("Please enter the withdraw amount");
       return;
-    } else if (withdrawPin !== myWithdrawPin) {
+    } 
+    else if (withdrawPin !== myWithdrawPin) {
       alert("Pin number is invalid");
       return;
-    } else if (availableBalance < withdrawAmount) {
+    } 
+    else if (availableBalance < withdrawAmount) {
       alert("Insufficient Balance");
       return;
     }
@@ -181,27 +184,32 @@ document
 
     const availableBalance = getInnerTextNum("available-balance");
     const couponCode = getInnerValue("coupon-number");
+    console.log(couponCode);
     const myCoupon1 = "payoo1000";
     const myCoupon2 = "payoo2000";
     let amount = 0;
 
-    if (couponCode === "" || couponCode !== myCoupon1 || couponCode !== myCoupon2) {
+    if (couponCode === ""){
       alert("please provide a valid coupon code");
       return;
-    } 
+    }
     else if (couponCode === myCoupon1) {
-      alert("You got $1000");
+      alert("You got TK 1000");
       const newBalance = availableBalance + 1000;
       setInnerText(newBalance);
       setInnerValue("coupon-number", "");
       amount = 1000;
     } 
     else if (couponCode === myCoupon2) {
-      alert("You got $2000");
+      alert("You got TK 2000");
       const newBalance = availableBalance + 2000;
       setInnerText(newBalance);
       setInnerValue("coupon-number", "");
       amount = 2000;
+    }
+    else{
+      alert("No bonus in this coupon code");
+      return;
     }
     const data = {
       name: "Get Bonus",
